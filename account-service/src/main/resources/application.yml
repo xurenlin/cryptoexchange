@@ -8,3 +8,7 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+    loadbalancer:
+      nacos:
+        enabled: true   # 启用Nacos负载均衡
+

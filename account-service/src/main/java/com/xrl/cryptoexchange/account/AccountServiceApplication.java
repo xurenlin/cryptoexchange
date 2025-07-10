@@ -6,8 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-@EnableFeignClients
+@EnableDiscoveryClient // 启用服务发现
+@EnableFeignClients // 启用Feign客户端
 public class AccountServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(AccountServiceApplication.class, args);
