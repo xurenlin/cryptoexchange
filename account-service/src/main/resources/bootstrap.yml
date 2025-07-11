@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: account-service # 决定主配置Data ID
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        file-extension: yaml
+        # ========= 扩展配置 =========
+        shared-configs[0]:
+          data-id: log.yaml
+          refresh: true
+          # ========= 共享配置 =========
+        shared-configs[1]:
+          data-id: mybatis.yaml
+          refresh: true
