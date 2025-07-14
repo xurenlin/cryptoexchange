@@ -32,6 +32,7 @@ public class UserController {
 
     @RequestMapping("/query")
     public String query(){
+        System.out.println("query");
         return tradeFeignClient.query();
     }
 
