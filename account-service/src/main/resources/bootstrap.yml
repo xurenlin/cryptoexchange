@@ -14,3 +14,29 @@ spring:
         shared-configs[1]:
           data-id: mybatis.yaml
           refresh: true
+    sentinel:
+      eager: true
+      scg:
+        enabled: false  # 如果用了 Spring Cloud Gateway，需关闭
+      transport:
+        dashboard: 127.0.0.1:8080  # Sentinel控制台地址
+        port: 8719                 # 客户端通信端口
+      datasource:
+        flow:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            data-id: ${spring.application.name}-flow-rules
+            group-id: DEFAULT_GROUP
+            rule-type: flow
+        degrade:
+          nacos:
+            server-addr: ${spring.cloud.nacos.server-addr}
+            data-id: ${spring.application.name}-degrade-rules
+            group-id: DEFAULT_GROUP
+            rule-type: degrade
+      filter:
+        enabled: true
+        url-patterns:
+          - /user/**    # 对该路径下的所有请求生效
+      web-context-unify: false  # 关闭上下文合并
+      http-method-specify: true # 区分HTTP方法

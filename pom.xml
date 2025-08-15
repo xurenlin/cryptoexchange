@@ -80,6 +80,18 @@
 			<artifactId>spring-cloud-starter-bootstrap</artifactId>
 		</dependency>
 
+		<!-- Spring Cloud Alibaba Sentinel -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+		</dependency>
+
+		<!-- Sentinel 数据源（如使用Nacos配置规则） -->
+		<dependency>
+			<groupId>com.alibaba.csp</groupId>
+			<artifactId>sentinel-datasource-nacos</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<!-- 管理版本 -->

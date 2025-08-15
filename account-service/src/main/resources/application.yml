@@ -11,4 +11,3 @@ spring:
     loadbalancer:
       nacos:
         enabled: true   # 启用Nacos负载均衡
-
